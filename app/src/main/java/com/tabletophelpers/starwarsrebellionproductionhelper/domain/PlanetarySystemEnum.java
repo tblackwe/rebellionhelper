@@ -5,19 +5,19 @@ package com.tabletophelpers.starwarsrebellionproductionhelper.domain;
  */
 public enum PlanetarySystemEnum {
 
-    MON_CALAMARI(1, ProductionType.LIGHT_SPACE, ProductionType.MEDIUM_SPACE),
+    MON_CALAMARI(3, ProductionType.LIGHT_SPACE, ProductionType.MEDIUM_SPACE),
     YAVIN(0),
     FELUCIA(1, ProductionType.LIGHT_GROUND),
-    SALEUCAMI(1, ProductionType.MEDIUM_GROUND),
+    SALEUCAMI(2, ProductionType.MEDIUM_GROUND),
 
     KESSEL(1, ProductionType.LIGHT_GROUND),
     NAL_HUTTA(1, ProductionType.LIGHT_GROUND, ProductionType.LIGHT_SPACE),
     TOYDARIA(0),
-    BOTHAWUI(1, ProductionType.MEDIUM_GROUND),
+    BOTHAWUI(2, ProductionType.MEDIUM_GROUND),
 
     RODIA(1, ProductionType.LIGHT_GROUND),
     TATOOINE(0),
-    GEONOSIS(1, ProductionType.LIGHT_SPACE, ProductionType.HEAVY_GROUND),
+    GEONOSIS(2, ProductionType.LIGHT_SPACE, ProductionType.HEAVY_GROUND),
     RYLOTH(1, ProductionType.LIGHT_GROUND),
 
     DATHOMIR(0),
@@ -26,24 +26,24 @@ public enum PlanetarySystemEnum {
     MALASTARE(1, ProductionType.LIGHT_GROUND),
 
     NABOO(1, ProductionType.LIGHT_GROUND, ProductionType.LIGHT_SPACE),
-    SULLUST(1, ProductionType.LIGHT_GROUND, ProductionType.HEAVY_GROUND),
+    SULLUST(2, ProductionType.LIGHT_GROUND, ProductionType.HEAVY_GROUND),
     DAGOBAH(0),
-    UTAPAU(1, ProductionType.MEDIUM_SPACE, ProductionType.MEDIUM_GROUND),
+    UTAPAU(2, ProductionType.MEDIUM_SPACE, ProductionType.MEDIUM_GROUND),
 
     DANTOOINE(0),
-    MYGEETO(1, ProductionType.LIGHT_SPACE, ProductionType.HEAVY_GROUND),
+    MYGEETO(2, ProductionType.LIGHT_SPACE, ProductionType.HEAVY_GROUND),
     ILUM(0),
-    ORD_MANTELL(1, ProductionType.MEDIUM_SPACE, ProductionType.MEDIUM_GROUND),
+    ORD_MANTELL(2, ProductionType.MEDIUM_SPACE, ProductionType.MEDIUM_GROUND),
 
     ALDERAAN(1, ProductionType.LIGHT_GROUND),
-    CATO_NEIMODIA(1, ProductionType.LIGHT_SPACE, ProductionType.MEDIUM_GROUND),
+    CATO_NEIMODIA(2, ProductionType.LIGHT_SPACE, ProductionType.MEDIUM_GROUND),
     CORUSCANT(1, ProductionType.LIGHT_GROUND),
-    CORELLIA(1, ProductionType.LIGHT_SPACE, ProductionType.HEAVY_SPACE),
+    CORELLIA(3, ProductionType.LIGHT_SPACE, ProductionType.HEAVY_SPACE),
 
-    BESPIN(1, ProductionType.MEDIUM_GROUND),
+    BESPIN(2, ProductionType.MEDIUM_GROUND),
     ENDOR(0),
     HOTH(0),
-    MUSTAFAR(1, ProductionType.LIGHT_SPACE, ProductionType.MEDIUM_SPACE);
+    MUSTAFAR(2, ProductionType.LIGHT_SPACE, ProductionType.MEDIUM_SPACE);
 
     int buildQueue;
     ProductionType[] productionTypes;
@@ -56,21 +56,5 @@ public enum PlanetarySystemEnum {
 
     public ProductionType[] getProductionTypes() {
         return this.productionTypes;
-//        ProductionType[] retVal;
-//        switch (this.control) {
-//            case REBEL:
-//            case IMPERIAL:
-//                retVal = this.productionTypes;
-//                break;
-//            case SUPRESSED:
-//
-//                retVal = new ProductionType[1];
-//                retVal[0] = productionTypes[0];
-//                break;
-//            default:
-//                retVal = new ProductionType[0];
-//                break;
-//        }
-//        return retVal;
     }
 }

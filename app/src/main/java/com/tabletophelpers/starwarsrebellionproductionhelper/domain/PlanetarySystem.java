@@ -11,6 +11,7 @@ public class PlanetarySystem {
     boolean probed = false;
     boolean rebelBase = false;
     boolean landed = false;
+    boolean sabotaged;
 
     public PlanetarySystem(PlanetarySystemEnum planetarySystemEnum) {
         this.planetarySystemEnum = planetarySystemEnum;
@@ -56,6 +57,14 @@ public class PlanetarySystem {
         this.landed = landed;
     }
 
+    public boolean isSabotaged() {
+        return sabotaged;
+    }
+
+    public void setSabotaged(boolean sabotaged) {
+        this.sabotaged = sabotaged;
+    }
+
     public ProductionType[] getProductionType() {
         ProductionType[] retVal;
         switch (this.controlEnum) {
@@ -63,7 +72,7 @@ public class PlanetarySystem {
             case IMPERIAL:
                 retVal = this.planetarySystemEnum.getProductionTypes();
                 break;
-            case SUPRESSED:
+            case SUBJEGATED:
 
                 retVal = new ProductionType[1];
                 retVal[0] = this.planetarySystemEnum.getProductionTypes()[0];

@@ -35,14 +35,7 @@ public class MainActivity extends AppCompatActivity {
     @NonNull
     private ArrayList<PlanetarySystem> loadPlanets() {
         ArrayList<PlanetarySystem> planetarySystems = new ArrayList<>();
-        for (PlanetarySystemEnum planetarySystemEnum : PlanetarySystemEnum.values()) {
-            PlanetarySystem toAdd = new PlanetarySystem(planetarySystemEnum);
 
-            if (PlanetarySystemEnum.CORUSCANT == planetarySystemEnum) {
-                toAdd.setControlEnum(ControlEnum.IMPERIAL);
-            }
-            planetarySystems.add(toAdd);
-        }
         return planetarySystems;
     }
 }

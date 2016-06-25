@@ -6,7 +6,7 @@ package com.tabletophelpers.starwarsrebellionproductionhelper.domain;
 public enum ControlEnum {
     REBEL,
     IMPERIAL,
-    SUPRESSED,
+    SUBJEGATED,
     NONE,
     SABOTAGED
 }
