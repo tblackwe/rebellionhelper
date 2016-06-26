@@ -15,10 +15,10 @@ import java.util.TreeMap;
  */
 public class GameSession {
 
-    Map<String, PlanetarySystem> planetarySystems = new TreeMap<>();
+    private Map<PlanetarySystemEnum, PlanetarySystem> planetarySystems = new TreeMap<>();
 
-    RebelProduction rebelProduction = new RebelProduction();
-    ImperialProduction imperialProduction = new ImperialProduction();
+    private RebelProduction rebelProduction = new RebelProduction();
+    private ImperialProduction imperialProduction = new ImperialProduction();
 
     public GameSession() {
         for (PlanetarySystemEnum planetarySystemEnum : PlanetarySystemEnum.values()) {
@@ -27,7 +27,7 @@ public class GameSession {
             if (PlanetarySystemEnum.CORUSCANT == planetarySystemEnum) {
                 toAdd.setControlEnum(ControlEnum.IMPERIAL);
             }
-            planetarySystems.put(planetarySystemEnum.name(), toAdd);
+            planetarySystems.put(planetarySystemEnum, toAdd);
         }
     }
 
@@ -75,4 +75,7 @@ public class GameSession {
         return productionMap;
     }
 
+    public Map<PlanetarySystemEnum, PlanetarySystem> getPlanetarySystems() {
+        return planetarySystems;
+    }
 }

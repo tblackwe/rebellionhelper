@@ -5,7 +5,7 @@ package com.tabletophelpers.starwarsrebellionproductionhelper.domain;
  */
 public enum PlanetarySystemEnum {
 
-    MON_CALAMARI(3, ProductionType.LIGHT_SPACE, ProductionType.MEDIUM_SPACE),
+    MON_CALAMARI(3, ProductionType.LIGHT_SPACE, ProductionType.HEAVY_SPACE),
     YAVIN(0),
     FELUCIA(1, ProductionType.LIGHT_GROUND),
     SALEUCAMI(2, ProductionType.MEDIUM_GROUND),
@@ -56,5 +56,9 @@ public enum PlanetarySystemEnum {
 
     public ProductionType[] getProductionTypes() {
         return this.productionTypes;
+    }
+
+    public String cleanName() {
+        return this.name().replaceAll("_", " ");
     }
 }

@@ -14,21 +14,22 @@ public class GameSessionTest {
     @Test
     public void testGetProduction() throws Exception {
 
-        for (PlanetarySystemEnum planetarySystemEnum : PlanetarySystemEnum.values()) {
-            if (0 < planetarySystemEnum.buildQueue) {
-                if ((planetarySystemEnum.name().length() & 1) != 0) {
-                    instance.planetarySystems.get(planetarySystemEnum.name()).setControlEnum(ControlEnum.REBEL);
-                } else {
-                    instance.planetarySystems.get(planetarySystemEnum.name()).setControlEnum(ControlEnum.IMPERIAL);
-                }
-            }
-            instance.planetarySystems.get(PlanetarySystemEnum.CORUSCANT.name()).setSabotaged(true);
-            instance.planetarySystems.get(PlanetarySystemEnum.ALDERAAN.name()).setDestroyed(true);
-            instance.planetarySystems.get(PlanetarySystemEnum.KASHYYYK.name()).setControlEnum(ControlEnum.SUBJEGATED);
-        }
-
+        instance.getPlanetarySystems().get(PlanetarySystemEnum.MON_CALAMARI).setControlEnum(ControlEnum.REBEL);
         System.out.println(Arrays.toString(instance.getProduction().get(Faction.REBEL)));
         System.out.println(Arrays.toString(instance.getProduction().get(Faction.IMPERIAL)));
 
+        instance.getPlanetarySystems().get(PlanetarySystemEnum.MON_CALAMARI).setControlEnum(ControlEnum.IMPERIAL);
+        System.out.println(Arrays.toString(instance.getProduction().get(Faction.IMPERIAL)));
+
+        instance.getPlanetarySystems().get(PlanetarySystemEnum.MON_CALAMARI).setControlEnum(ControlEnum.SUBJEGATED);
+        System.out.println(Arrays.toString(instance.getProduction().get(Faction.IMPERIAL)));
+
+        instance.getPlanetarySystems().get(PlanetarySystemEnum.MON_CALAMARI).setSabotaged(true);
+        System.out.println(Arrays.toString(instance.getProduction().get(Faction.IMPERIAL)));
+
+        instance.getPlanetarySystems().get(PlanetarySystemEnum.MON_CALAMARI).setSabotaged(false);
+        System.out.println(Arrays.toString(instance.getProduction().get(Faction.IMPERIAL)));
+        instance.getPlanetarySystems().get(PlanetarySystemEnum.MON_CALAMARI).setDestroyed(true);
+        System.out.println(Arrays.toString(instance.getProduction().get(Faction.IMPERIAL)));
     }
 }
