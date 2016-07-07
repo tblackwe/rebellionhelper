@@ -24,9 +24,9 @@ public class GameSession {
         for (PlanetarySystemEnum planetarySystemEnum : PlanetarySystemEnum.values()) {
             PlanetarySystem toAdd = new PlanetarySystem(planetarySystemEnum);
 
-            if (PlanetarySystemEnum.CORUSCANT == planetarySystemEnum) {
-                toAdd.setControlEnum(ControlEnum.IMPERIAL);
-            }
+//            if (PlanetarySystemEnum.CORUSCANT == planetarySystemEnum) {
+//                toAdd.setControlEnum(ControlEnum.IMPERIAL);
+//            }
             planetarySystems.put(planetarySystemEnum, toAdd);
         }
     }

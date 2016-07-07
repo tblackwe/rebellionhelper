@@ -6,33 +6,33 @@ package com.tabletophelpers.starwarsrebellionproductionhelper.domain;
 public enum PlanetarySystemEnum {
 
     MON_CALAMARI(3, ProductionType.LIGHT_SPACE, ProductionType.HEAVY_SPACE),
-    YAVIN(0),
+//    YAVIN(0),
     FELUCIA(1, ProductionType.LIGHT_GROUND),
     SALEUCAMI(2, ProductionType.MEDIUM_GROUND),
 
     KESSEL(1, ProductionType.LIGHT_GROUND),
     NAL_HUTTA(1, ProductionType.LIGHT_GROUND, ProductionType.LIGHT_SPACE),
-    TOYDARIA(0),
+//    TOYDARIA(0),
     BOTHAWUI(2, ProductionType.MEDIUM_GROUND),
 
     RODIA(1, ProductionType.LIGHT_GROUND),
-    TATOOINE(0),
+//    TATOOINE(0),
     GEONOSIS(2, ProductionType.LIGHT_SPACE, ProductionType.HEAVY_GROUND),
     RYLOTH(1, ProductionType.LIGHT_GROUND),
 
-    DATHOMIR(0),
+//    DATHOMIR(0),
     MANDALORE(1, ProductionType.LIGHT_GROUND, ProductionType.LIGHT_SPACE),
     KASHYYYK(1, ProductionType.LIGHT_GROUND, ProductionType.LIGHT_GROUND),
     MALASTARE(1, ProductionType.LIGHT_GROUND),
 
     NABOO(1, ProductionType.LIGHT_GROUND, ProductionType.LIGHT_SPACE),
     SULLUST(2, ProductionType.LIGHT_GROUND, ProductionType.HEAVY_GROUND),
-    DAGOBAH(0),
+//    DAGOBAH(0),
     UTAPAU(2, ProductionType.MEDIUM_SPACE, ProductionType.MEDIUM_GROUND),
 
-    DANTOOINE(0),
+//    DANTOOINE(0),
     MYGEETO(2, ProductionType.LIGHT_SPACE, ProductionType.HEAVY_GROUND),
-    ILUM(0),
+//    ILUM(0),
     ORD_MANTELL(2, ProductionType.MEDIUM_SPACE, ProductionType.MEDIUM_GROUND),
 
     ALDERAAN(1, ProductionType.LIGHT_GROUND),
@@ -41,8 +41,8 @@ public enum PlanetarySystemEnum {
     CORELLIA(3, ProductionType.LIGHT_SPACE, ProductionType.HEAVY_SPACE),
 
     BESPIN(2, ProductionType.MEDIUM_GROUND),
-    ENDOR(0),
-    HOTH(0),
+//    ENDOR(0),
+//    HOTH(0),
     MUSTAFAR(2, ProductionType.LIGHT_SPACE, ProductionType.MEDIUM_SPACE);
 
     int buildQueue;
@@ -60,5 +60,11 @@ public enum PlanetarySystemEnum {
 
     public String cleanName() {
         return this.name().replaceAll("_", " ");
+    }
+
+
+    @Override
+    public String toString() {
+        return cleanName();
     }
 }
