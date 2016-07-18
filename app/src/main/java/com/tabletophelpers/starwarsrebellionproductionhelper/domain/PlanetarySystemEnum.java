@@ -6,33 +6,33 @@ package com.tabletophelpers.starwarsrebellionproductionhelper.domain;
 public enum PlanetarySystemEnum {
 
     MON_CALAMARI(3, ProductionType.LIGHT_SPACE, ProductionType.HEAVY_SPACE),
-//    YAVIN(0),
+    //    YAVIN(0),
     FELUCIA(1, ProductionType.LIGHT_GROUND),
-    SALEUCAMI(2, ProductionType.MEDIUM_GROUND),
+    SALEUCAMI(1, ProductionType.MEDIUM_GROUND),
 
     KESSEL(1, ProductionType.LIGHT_GROUND),
     NAL_HUTTA(1, ProductionType.LIGHT_GROUND, ProductionType.LIGHT_SPACE),
-//    TOYDARIA(0),
-    BOTHAWUI(2, ProductionType.MEDIUM_GROUND),
+    TOYDARIA(2, ProductionType.MEDIUM_SPACE),
+    BOTHAWUI(1, ProductionType.MEDIUM_GROUND),
 
     RODIA(1, ProductionType.LIGHT_GROUND),
-//    TATOOINE(0),
+    //    TATOOINE(0),
     GEONOSIS(2, ProductionType.LIGHT_SPACE, ProductionType.HEAVY_GROUND),
     RYLOTH(1, ProductionType.LIGHT_GROUND),
 
-//    DATHOMIR(0),
+    //    DATHOMIR(0),
     MANDALORE(1, ProductionType.LIGHT_GROUND, ProductionType.LIGHT_SPACE),
     KASHYYYK(1, ProductionType.LIGHT_GROUND, ProductionType.LIGHT_GROUND),
     MALASTARE(1, ProductionType.LIGHT_GROUND),
 
     NABOO(1, ProductionType.LIGHT_GROUND, ProductionType.LIGHT_SPACE),
     SULLUST(2, ProductionType.LIGHT_GROUND, ProductionType.HEAVY_GROUND),
-//    DAGOBAH(0),
-    UTAPAU(2, ProductionType.MEDIUM_SPACE, ProductionType.MEDIUM_GROUND),
+    //    DAGOBAH(0),
+    UTAPAU(3, ProductionType.MEDIUM_SPACE, ProductionType.HEAVY_SPACE),
 
-//    DANTOOINE(0),
+    //    DANTOOINE(0),
     MYGEETO(2, ProductionType.LIGHT_SPACE, ProductionType.HEAVY_GROUND),
-//    ILUM(0),
+    //    ILUM(0),
     ORD_MANTELL(2, ProductionType.MEDIUM_SPACE, ProductionType.MEDIUM_GROUND),
 
     ALDERAAN(1, ProductionType.LIGHT_GROUND),
@@ -40,8 +40,8 @@ public enum PlanetarySystemEnum {
     CORUSCANT(1, ProductionType.LIGHT_GROUND),
     CORELLIA(3, ProductionType.LIGHT_SPACE, ProductionType.HEAVY_SPACE),
 
-    BESPIN(2, ProductionType.MEDIUM_GROUND),
-//    ENDOR(0),
+    BESPIN(1, ProductionType.MEDIUM_GROUND),
+    //    ENDOR(0),
 //    HOTH(0),
     MUSTAFAR(2, ProductionType.LIGHT_SPACE, ProductionType.MEDIUM_SPACE);
 

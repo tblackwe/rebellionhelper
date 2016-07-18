@@ -3,26 +3,21 @@ package com.tabletophelpers.starwarsrebellionproductionhelper.activity;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.ListAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import com.tabletophelpers.starwarsrebellionproductionhelper.R;
 import com.tabletophelpers.starwarsrebellionproductionhelper.domain.ControlEnum;
-import com.tabletophelpers.starwarsrebellionproductionhelper.domain.Faction;
 import com.tabletophelpers.starwarsrebellionproductionhelper.domain.GameSession;
 import com.tabletophelpers.starwarsrebellionproductionhelper.domain.PlanetarySystem;
 import com.tabletophelpers.starwarsrebellionproductionhelper.domain.PlanetarySystemEnum;
-import com.tabletophelpers.starwarsrebellionproductionhelper.domain.maps.ProductionMap;
 
 import java.util.ArrayList;
-import java.util.Map;
 
 /**
  * Created by tblackwe on 7/5/16.
@@ -50,14 +45,16 @@ public class PlanetarySystemFragment extends Fragment {
             items.add(pse);
         }
 
-        ArrayAdapter<PlanetarySystemEnum> adapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, items);
+        listView.setCacheColorHint(Color.TRANSPARENT);
+        final ArrayAdapter<PlanetarySystemEnum> adapter = new PlanetarySystemAdapter(getActivity(), items, gameSession);
         listView.setAdapter(adapter);
 
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Object item = adapterView.getAdapter().getItem(i);
+                final Adapter adapterViewAdapter = adapterView.getAdapter();
+                Object item = adapterViewAdapter.getItem(i);
                 PlanetarySystemEnum planetarySystemEnum = (PlanetarySystemEnum) item;
 
                 PlanetarySystem planetarySystem = gameSession.getPlanetarySystems().get(planetarySystemEnum);
@@ -79,44 +76,11 @@ public class PlanetarySystemFragment extends Fragment {
                         planetarySystem.setControlEnum(ControlEnum.NONE);
                         break;
                 }
-                Log.i("THOMAS","Updated color for " + planetarySystemEnum + ". ");
-                setBackGroundColor(view, planetarySystem.getControlEnum());
-
-
+                adapter.notifyDataSetChanged();
             }
+
         });
+
         return view;
-    }
-
-    private void setBackGroundColor(View view, ControlEnum controlEnum) {
-        switch (controlEnum) {
-            case REBEL:
-                Log.i("THOMAS","New color is RED");
-                view.setBackgroundColor(Color.RED);
-                break;
-            case IMPERIAL:
-                Log.i("THOMAS","New color is BLUE");
-                view.setBackgroundColor(Color.BLUE);
-                break;
-            case SUBJEGATED:
-                Log.i("THOMAS","New color is CYAN");
-                view.setBackgroundColor(Color.CYAN);
-                break;
-            case NONE:
-            default:
-                Log.i("THOMAS","New color is WHITE");
-                view.setBackgroundColor(Color.WHITE);
-                break;
-        }
-    }
-
-    public void update() {
-        ListAdapter adapter = listView.getAdapter();
-        int planetCount = adapter.getCount();
-        for (int i = 0; i < planetCount; i++) {
-            Object item = adapter.getItem(i);
-            PlanetarySystemEnum planetarySystemEnum = (PlanetarySystemEnum) item;
-            setBackGroundColor(adapter.getView(i, null, listView), gameSession.getPlanetarySystems().get(planetarySystemEnum).getControlEnum());
-        }
     }
 }
